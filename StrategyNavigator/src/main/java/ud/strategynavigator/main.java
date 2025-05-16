@@ -31,7 +31,7 @@ public class main {
                     cell.setBackground(Color.WHITE);
                     cell.setOpaque(true);
                     cell.setEnabled(false);
-                    grid[y][x] = cell; // ✅ CORREGIDO: filas = y, columnas = x
+                    grid[y][x] = cell;
                     mapPanel.add(cell);
                 }
             }
@@ -39,7 +39,7 @@ public class main {
             // Marcamos los POIs
             for (int i = 0; i < POIS.length; i++) {
                 Point p = POIS[i];
-                grid[p.y][p.x].setBackground(Color.CYAN); // ✅
+                grid[p.y][p.x].setBackground(Color.CYAN);
                 grid[p.y][p.x].setText(POI_NAMES[i]);
             }
 
