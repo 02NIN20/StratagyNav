@@ -2,29 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package ud.strategynavigator;
 
-/**
- *
- * @author USUARIO
- */
+import java.awt.Point;
+
 public class Navigator {
-    private RouteStrategy routestrategy;
-    
-    public void setRouteStrategy(RouteStrategy routestrategy){
-    
-        this.routestrategy = routestrategy; 
-    
+    private RouteStrategy routeStrategy;
+
+    public void setRouteStrategy(RouteStrategy strategy) {
+        this.routeStrategy = strategy;
     }
-    
-    public void buildRoute(String A, String B){
-    
-        if(routestrategy == null){
-            System.out.println("No se ha definido una estrategia de ruta aún. ");
-            return;
-            
+
+    public String buildRoute(Point start, Point end) {
+        if (routeStrategy == null) {
+            return "No hay una estrategia definida.";
         }
-        routestrategy.buildRoute(A, B);
-        
+        int cost = routeStrategy.calculateCost(start.x, start.y, end.x, end.y);
+        return "Tiempo estimado: " + cost + " min usando " + routeStrategy.getName();
     }
 }
+

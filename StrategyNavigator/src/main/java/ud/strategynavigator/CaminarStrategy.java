@@ -4,15 +4,24 @@
  */
 package ud.strategynavigator;
 
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author USUARIO
  */
 public class CaminarStrategy implements RouteStrategy{
 
+   @Override
+    public int calculateCost(int startX, int startY, int endX, int endY) {
+        return (int) ((Math.abs(startX - endX) + Math.abs(startY - endY)));
+    }
+
     @Override
-    public void buildRoute(String A, String B) {
-        System.out.println("Generando ruta para ir caminando");
+    public String getName() {
+        return"Caminar";
     }
     
 }

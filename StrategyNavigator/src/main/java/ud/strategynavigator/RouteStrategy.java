@@ -4,10 +4,13 @@
 
 package ud.strategynavigator;
 
+
+
 /**
  *
  * @author USUARIO
  */
-public interface RouteStrategy {
-    void buildRoute(String A, String B);
+interface RouteStrategy {
+    String getName();
+    int calculateCost(int startX, int startY, int endX, int endY);
 }
